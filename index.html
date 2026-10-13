@@ -525,7 +525,7 @@ function brDate(value){
 }
 function openWhatsApp(message){
   const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  window.location.href = url;
 }
 
 document.querySelectorAll("[data-whatsapp]").forEach((el)=>{
@@ -569,8 +569,7 @@ if(form){
 
     const status = document.querySelector("#formStatus");
     status.style.display = "block";
-    setTimeout(()=>openWhatsApp(lines.join("
-")), 120);
+    openWhatsApp(lines.join("\n"));
   });
 }
 
